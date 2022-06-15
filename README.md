@@ -38,5 +38,8 @@ exchangerate.host API -> Apache Airflow -> PortgreSQL
     - Password: `admin1234`
  3. Select data from the table `public.exchangerates`
 
+## How to connect from local DBeaver
+![alt text](/images/dbeaver.png "Title")
+
 ## Important
 All credentials are shared just for demo purposes. This approch is unsecure and is not used in real projects.
