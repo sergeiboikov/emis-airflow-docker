@@ -17,15 +17,6 @@ exchangerate.host API -> Apache Airflow -> PortgreSQL
     - `AIRFLOW_GID=0`
 3. Execute the command `docker-compose up` from the root of the project directory.
 4. Navigate to `localhost:8080/admin` to view the Airflow UI (User: `airflow`; Pwd: `airflow`).
-5. Run the pipeline `create_db` for creating the table `public.exchangerates` in the database `currency_db`.
-6. Run the pipeline `seed_rates` for loading historical data of international exchange rates.
-7. Run the pipeline `update_rates` for loading delta data of international exchange rates.
-
-## DAG Guide 
-
-- `create_db`: Pipeline creates the `currency_db` database and the `public.exchangerates` table that will store data about international exchange rates. 
-- `seed_rates`: Pipeline populates historical data about international exchange rates. You need to run the pipeline one time.
-- `update_rates`: Pipeline populates delta data about international exchange rates. This pipelines is run every 3 hours.
 
 ## Setup pgAdmin (for validating the result of ETL process)
 1. Navigate to `http://localhost:5050/browser` to view the pgAdmin UI (User: `pgadmin4@pgadmin.org`; Pwd: `admin1234`).
@@ -33,10 +24,9 @@ exchangerate.host API -> Apache Airflow -> PortgreSQL
     - Server name: `postgres_server`
     - Host name/address: `postgresql_etl_server`
     - Port: `5432`
-    - Maintenance database: `currency_db`
+    - Maintenance database: `EMIS_DW`
     - Username: `admin`
     - Password: `admin1234`
- 3. Select data from the table `public.exchangerates`
 
 ## How to connect from local DBeaver
 ![alt text](/images/dbeaver.png "Title")
