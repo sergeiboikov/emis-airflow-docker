@@ -1,0 +1,9 @@
+logs
+.env
+__pycache__
+venv
+.idea
+database-data
+pgadmin
+pgdata
+plugins
